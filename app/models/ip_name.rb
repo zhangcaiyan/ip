@@ -4,7 +4,7 @@ class IpName < ActiveRecord::Base
     3.times.each do |i|
       puts i
       begin
-        agent.get "http://www.543345.com"
+        agent.get "http://www.baidu.com"
         return true
       rescue Net::OpenTimeout
         timeout += 1
@@ -14,11 +14,11 @@ class IpName < ActiveRecord::Base
   end
 
   def self.record
-    agent = Mechanize.new
     # agent.user_agent_alias = 'Mac Safari'
+    agent = Mechanize.new
     agent.user_agent = "Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)"
-    agent.set_proxy("183.221.217.58", 8123)
-    agent.open_timeout=0.5
+    agent.set_proxy("115.28.149.237", 3128)
+    agent.open_timeout=1
     if check(agent)
       puts "记录"
     else
