@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @ip_name.name %>
+</p>
+
+<p>
+  <strong>Is valid:</strong>
+  <%= @ip_name.is_valid %>
+</p>
+
+<%= link_to 'Edit', edit_ip_name_path(@ip_name) %> |
+<%= link_to 'Back', ip_names_path %>

@@ -1,0 +1,27 @@
+<h1>Listing ip_names</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Is valid</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ip_names.each do |ip_name| %>
+      <tr>
+        <td><%= ip_name.name %></td>
+        <td><%= ip_name.is_valid %></td>
+        <td><%= link_to 'Show', ip_name %></td>
+        <td><%= link_to 'Edit', edit_ip_name_path(ip_name) %></td>
+        <td><%= link_to 'Destroy', ip_name, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ip name', new_ip_name_path %>
